@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  if author_list.length
+    ul
+      each author in author_list
+        li
+          - let deathDate = (author.death.length > 0) ? `(${author.death})` : '' 
+          a(href=author.url) #{author.name}
+            |  #{deathDate}
+
+  else
+    p There are no authors.

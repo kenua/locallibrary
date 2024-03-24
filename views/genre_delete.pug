@@ -1,0 +1,9 @@
+extend layout
+
+block content
+  h1= title
+  form(method="POST")
+    h2 Are you sure you want to detele #[em #{genre.name}]?
+    input(type="hidden" value=genre._id name="genreid")
+    button.btn.btn-primary(type="submit") Delete
+  
